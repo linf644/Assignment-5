@@ -1,0 +1,116 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+.bg{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background: linear-gradient(45deg, #e5ffb4, #99e2fa);
+	background-size: 200% 200%;
+	animation: bg-change 7s ease infinite;
+}
+@keyframes bg-change {
+	0% {
+			background-position: 0% 50%;
+		}
+		50% {
+			background-position: 100% 50%;
+		}
+		100% {
+			background-position: 0% 50%;
+		}
+}
+#text{
+		position: absolute;
+		left: calc(54% - 500px);
+		top: calc(45% - 100pt);
+		width: 1000px;
+		height: 200pt;
+		font-family: 'Modak', cursive;
+		font-size: 250pt;
+		color:  #FEFBF2;
+	}
+	#r{
+		position: absolute;
+		left: 50px;
+	}
+	#o{
+		position: absolute;
+		left: 300px;;
+	}
+	#l1{
+		position: absolute;
+		left: 550px;
+	}
+	#l1:hover{
+		transform: rotate(-30deg);
+		transform-origin: top left;
+	}
+	#l2{
+		position: absolute;
+		left: 750px;
+	}
+
+/* animations */
+.kick{
+	animation-name: kick;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+@keyframes kick {
+	from{transform:skewX(0deg);}
+	to{transform: skewX(45deg);}
+}
+.roll{
+ animation: roll 1000ms linear 4, moveLeftToRight 4000ms linear 1;
+ /* transition: all 1500ms ease; */
+}
+@keyframes roll{
+from { transform: rotate(0deg); }
+to { transform: rotate(360deg);}
+}
+@keyframes moveLeftToRight {
+	from {left: 300px;}
+	to {left: 100%;}
+}
+.spin{
+	animation: spin 500ms linear 3, moveL2 3000ms linear 1;
+}
+@keyframes spin {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+@keyframes moveL2 {
+	from {top: calc(45% - 100pt);}
+	to {top: -1500px;}
+}
+@media only screen and (max-width: 770px) {
+	.text{
+			left: 150px;
+			top: 50px;
+		}
+	#r{
+		top: -150px;
+		left: 50px;
+	}
+	#o{
+		top: 50px;
+		left: 50px;
+	}
+	#l1{
+		top: 300px;
+		left: 50px;
+	}
+	#l2{
+		top: 550px;
+		left: 50px;
+	}
+}
